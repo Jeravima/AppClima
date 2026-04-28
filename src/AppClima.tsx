@@ -13,13 +13,13 @@ export interface Data {
 }
 
 const colorBackground = {
-  Clear: "bg-linear-to-r from-amber-200 to-yellow-500",
-  Clouds: "bg-linear-to-r from-neutral-300 to-stone-400",
-  Rain: "bg-linear-to-r from-slate-300 to-slate-500",
-  Snow: "bg-gradient-to-r from-indigo-400 to-cyan-400",
-  Mist: "bg-gradient-to-r from-slate-500 to-slate-800",
-  Thunderstorm: "bg-gradient-to-r from-slate-900 to-slate-700",
-  Default: "bg-gradient-to-r from-slate-300 to-slate-500",
+  Clear: "bg-gradient-to-br from-amber-200 via-yellow-300 to-yellow-500",
+  Clouds: "bg-gradient-to-br from-neutral-200 via-slate-300 to-stone-400",
+  Rain: "bg-gradient-to-br from-slate-300 via-slate-400 to-slate-600",
+  Snow: "bg-gradient-to-br from-indigo-300 via-blue-300 to-cyan-400",
+  Mist: "bg-gradient-to-br from-slate-400 via-slate-600 to-slate-800",
+  Thunderstorm: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900",
+  Default: "bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500",
 };
 
 export const AppClima = () => {
@@ -60,7 +60,7 @@ export const AppClima = () => {
 
   return (
     <div
-      className={`min-h-screen flex items-center  justify-center p-6 ${
+      className={`min-h-screen w-full flex items-center justify-center p-4 sm:p-6 ${
         weatherData?.background === "Clear"
           ? colorBackground.Clear
           : weatherData?.background === "Clouds"
@@ -76,17 +76,19 @@ export const AppClima = () => {
                     : colorBackground.Default
       } transition-colors duration-1000`}
     >
-      <div className=" bg-white/30 backdrop-blur-lg rounded-2xl p-4 flex flex-col items-center justify-center min-h-75 shadow-xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-8 ">
-          App Clima{" "}
+      <div className="w-full max-w-md bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-6 sm:mb-8">
+          App Clima
         </h1>
-        <div className="justify-center flex-col">
+        <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
           <Search inputValue={city} onChange={setCity} onClick={getData} />
 
           {loading ? (
-            <div className="animate-pulse text-center">Cargando...</div>
+            <div className="animate-pulse text-center text-sm sm:text-base">
+              Cargando...
+            </div>
           ) : weatherData ? (
-            <div className="transition-all duration-500 opacity-100">
+            <div className="transition-all duration-500 opacity-100 w-full flex justify-center">
               <Card
                 country={weatherData.country}
                 description={weatherData.description}
