@@ -16,7 +16,7 @@ export const Search = ({ inputValue, onChange, onClick }: Props) => {
     <div>
       <form action="" className="flex gap-4" onSubmit={handleSubmit}>
         <Input
-          placeholder="Ingresa el nombre de tu ciudad"
+          placeholder="Ejemplo New York, Bogotá..."
           type="text"
           value={inputValue}
           onChange={(e) => onChange(e.target.value)}
