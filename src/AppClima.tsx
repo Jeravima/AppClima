@@ -26,9 +26,12 @@ export const AppClima = () => {
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
   const [weatherData, setWeatherData] = useState<Data | null>(null);
+  const [sugestions, setSugestions] = useState<any[]>([]);
 
-  const getData = async () => {
+  const getData = async (cityName?:string) => {
     setLoading(true);
+    setCity('')
+    setSugestions([])
 
     try {
       const response = await fetch(
@@ -49,12 +52,24 @@ export const AppClima = () => {
         background: data.weather[0].main,
       });
 
-      console.log(data);
       if (data.cod === "404") {
         alert("Ciudad no encontrada");
       }
     } catch (error) {
       toast.error("Algo salio mal");
+    }
+  };
+
+  const getSuggestions = async (value: string) => {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${import.meta.env.VITE_API_KEY}`,
+      );
+      const data = await res.json();
+        
+      setSugestions(data);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -74,15 +89,51 @@ export const AppClima = () => {
                   : weatherData?.background === "Thunderstorm"
                     ? colorBackground.Thunderstorm
                     : colorBackground.Default
-      } transition-colors duration-1000`}
+      } transition-colors duration-1500`}
     >
-      <div className="w-full max-w-md bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-xl">
+      <div className="w-full max-w-md bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-xl transition-all duration-1000">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-6 sm:mb-8">
           App Clima
         </h1>
         <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
-          <Search inputValue={city} onChange={setCity} onClick={getData} />
+          <div className="w-full relative">
+            <Search
+              inputValue={city}
+              onChange={(value) => {
+                setCity(value);
 
+                if (value.length >= 3) {
+                  getSuggestions(value);
+                } else {
+                  setSugestions([]);
+                }
+              }}
+              onClick={()=>getData()}
+            />
+
+            {sugestions.length > 0 && (
+              <ul className="absolute top-full left-0 w-full bg-white rounded-lg shadow-md mt-1 z-10">
+                {sugestions.map((item, index) => (
+                  <li
+                    key={index}
+                    className="p-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => {
+                      const selectedCity = `${item.name}, ${item.country}`;
+
+                      setCity(selectedCity);
+                      setSugestions([]);
+                      getData(selectedCity)
+                    }}
+                  >
+                    {item.name}, {item.state ? item.state + "," : ""}{" "}
+                    {item.country}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+         
           {loading ? (
             <div className="animate-pulse text-center text-sm sm:text-base">
               Cargando...
