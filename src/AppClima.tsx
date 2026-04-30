@@ -28,7 +28,7 @@ export const AppClima = () => {
   const [weatherData, setWeatherData] = useState<Data | null>(null);
   const [sugestions, setSugestions] = useState<any[]>([]);
 
-  const getData = async (cityName?:string) => {
+  const getData = async (_cityName?:string) => {
     setLoading(true);
     setCity('')
     setSugestions([])
