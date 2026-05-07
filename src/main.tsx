@@ -1,12 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { AppClima } from './AppClima'
+//import { AppClima } from './AppClima'
 import { Toaster } from 'sonner'
+import { WeatherApp } from './WeatherApp'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Toaster/>
-    <AppClima/>
+    <WeatherApp/>
   </StrictMode>,
 )
