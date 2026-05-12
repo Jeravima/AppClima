@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 export const Sidebar = () => {
   return (
-    <aside className="hidden md:flex md:w-64 flex-col bg-gray-500 rounded-3xl m-4 p-6  shadow-xl ">
+    <aside className="hidden md:flex md:w-64 flex-col bg-gray-500 min-h-screen rounded-l-md p-6  shadow-xl ">
       <div className="flex flex-col items-center gap-2 pb-8 border-b border-white">
         <div className="relative h-14 w-14 grid place-items-center rounded-2xl bg-white">
           {" "}
