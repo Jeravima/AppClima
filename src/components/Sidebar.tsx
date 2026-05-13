@@ -1,46 +1,53 @@
-import { FaCloudSun, FaCloudSunRain, FaHome, FaLocationArrow} from 'react-icons/fa'
+import {
+  FaCloudSun,
+  FaCloudSunRain,
+  FaHome,
+  FaLocationArrow,
+} from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 
-import { Link } from 'react-router';
-
-
+import { Link } from "react-router";
 
 export const Sidebar = () => {
   return (
-    <aside className="hidden md:flex md:w-64 flex-col bg-gray-500 min-h-screen rounded-l-md p-6  shadow-xl ">
-      <div className="flex flex-col items-center gap-2 pb-8 border-b border-white">
-        <div className="relative h-14 w-14 grid place-items-center rounded-2xl bg-white">
+    <aside className="w-64 h-full flex flex-col bg-gray-500 p-4 md:p-6 shadow-xl">
+      <div className="flex flex-col items-center gap-2 pb-6 md:pb-8 border-b border-white">
+        <div className="relative h-12 md:h-14 w-12 md:w-14 grid place-items-center rounded-2xl bg-white">
           {" "}
-          <FaCloudSun size={40} />
+          <FaCloudSun size={32} />
         </div>
-        <h1 className="text-2xl text-white mt-4 font-bold tracking-[0.3em] ">
+        <h1 className="text-xl md:text-2xl text-white mt-2 md:mt-4 font-bold tracking-[0.3em]">
           CLIMA
         </h1>
       </div>
-      <div className="flex flex-col gap-10 mt-10 w-full ">
+      <div className="flex flex-col gap-6 md:gap-10 mt-6 md:mt-10 w-full">
         <Link
           to="/"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2"
+          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
         >
-          <FaHome size={30} /> <span>Home</span>
+          <FaHome size={24} />
+          <span className="font-medium">Home</span>
         </Link>
         <Link
           to="/forecast"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2"
+          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
         >
-          <FaCloudSunRain size={30} /> <span>Forecast</span>
+          <FaCloudSunRain size={24} />
+          <span className="font-medium">Forecast</span>
         </Link>
         <Link
           to="/locations"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2"
+          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
         >
-          <FaLocationArrow size={25} /> <span>Locations</span>
+          <FaLocationArrow size={20} />
+          <span className="font-medium">Locations</span>
         </Link>
         <Link
           to="/settings"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2"
+          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
         >
-          <IoMdSettings size={30} /> <span>Settings</span>
+          <IoMdSettings size={24} />
+          <span className="font-medium">Settings</span>
         </Link>
       </div>
     </aside>

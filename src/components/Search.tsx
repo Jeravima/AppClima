@@ -41,7 +41,7 @@ export const Search = ({ inputValue, onChange, onClick }: Props) => {
             inputRef.current?.focus()
           }}
           disabled={!inputValue}
-          className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
+          className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base cursor-pointer"
         >
           Buscar
         </Button>

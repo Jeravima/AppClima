@@ -56,7 +56,7 @@ export const useWeather = () => {
 
       const forecast = await forecastResponse.json();
 
-      const formattedForecast = forecast.list.slice(0, 5).map((item: any) => ({
+      const formattedForecast = forecast.list.slice(0, 9).map((item: any) => ({
         dt_txt: item.dt_txt,
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
