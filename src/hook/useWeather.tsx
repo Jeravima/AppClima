@@ -1,13 +1,6 @@
+import type { WeatherResponse } from "@/types/weather";
 import { useState } from "react";
 import { toast } from "sonner";
-
-export interface Data {
-  name?: string;
-  temp?: number;
-  description?: string;
-  icon?: string;
-  country?: string;
-}
 
 export interface ForecastItem {
   dt_txt: string;
@@ -18,7 +11,7 @@ export interface ForecastItem {
 
 export const useWeather = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [weatherData, setWeatherData] = useState<Data | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherResponse | null>(null);
   const [forecastData, setForecastData] = useState<ForecastItem[]>([]);
 
   const getData = async (_cityName?: string) => {
@@ -42,13 +35,8 @@ export const useWeather = () => {
         return;
       }
 
-      setWeatherData({
-        temp: Math.round(data.main.temp),
-        name: data.name,
-        country: data.sys.country,
-        description: data.weather[0].description,
-        icon: data.weather[0].icon,
-      });
+      setWeatherData(data);
+      console.log(data);
 
       const forecastResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${_cityName}&appid=${import.meta.env.VITE_API_KEY}&units=metric&lang=es`,
@@ -56,7 +44,14 @@ export const useWeather = () => {
 
       const forecast = await forecastResponse.json();
 
-      const formattedForecast = forecast.list.slice(0, 9).map((item: any) => ({
+      const now = Date.now() / 1000;
+      
+
+      const forecastList = forecast.list
+        .filter((item: any) => item.dt >= now)
+        .slice(2, 10);
+
+      const formattedForecast = forecastList.map((item: any) => ({
         dt_txt: item.dt_txt,
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
@@ -64,7 +59,9 @@ export const useWeather = () => {
       }));
 
       setForecastData(formattedForecast);
-      console.log(forecastData)
+
+      
+      console.log(forecastData);
     } catch (error) {
       toast.error("Algo salió mal");
     } finally {
