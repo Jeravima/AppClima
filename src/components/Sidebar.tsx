@@ -6,11 +6,14 @@ import {
 } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export const Sidebar = () => {
+  const { pathname } = useLocation();
+
+
   return (
-    <aside className="w-64 h-full flex flex-col bg-gray-500 p-4 md:p-6 shadow-xl">
+    <aside className="w-64 h-full flex flex-col bg-linear-to-r from-cyan-500 to-blue-500 p-4 md:p-6 shadow-xl">
       <div className="flex flex-col items-center gap-2 pb-6 md:pb-8 border-b border-white">
         <div className="relative h-12 md:h-14 w-12 md:w-14 grid place-items-center rounded-2xl bg-white">
           {" "}
@@ -23,28 +26,28 @@ export const Sidebar = () => {
       <div className="flex flex-col gap-6 md:gap-10 mt-6 md:mt-10 w-full">
         <Link
           to="/"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
+          className={`${pathname === "/" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaHome size={24} />
           <span className="font-medium">Home</span>
         </Link>
         <Link
           to="/forecast"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
+          className={`${pathname === "/forecast" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaCloudSunRain size={24} />
           <span className="font-medium">Forecast</span>
         </Link>
         <Link
           to="/locations"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
+          className={`${pathname === "/locations" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaLocationArrow size={20} />
           <span className="font-medium">Locations</span>
         </Link>
         <Link
           to="/settings"
-          className="flex items-center gap-3 hover:bg-white/30 rounded p-2 transition-colors duration-200 text-white text-sm md:text-base"
+          className={`${pathname === "/settings" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <IoMdSettings size={24} />
           <span className="font-medium">Settings</span>
