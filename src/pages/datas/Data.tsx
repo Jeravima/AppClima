@@ -1,7 +1,7 @@
 import { useWeatherContext } from "@/context/SearchContext";
 
 
-export const Forecast = () => {
+export const Data = () => {
 
   const {weatherData} = useWeatherContext()
   console.log('Data', weatherData)

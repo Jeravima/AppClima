@@ -1,4 +1,4 @@
-import { Forecast } from "@/pages/datas/Data";
+import { Data } from "@/pages/datas/Data";
 import { Home } from "@/pages/home/Home";
 import { Layout } from "@/pages/layout/Layout";
 import { Locations } from "@/pages/Locations";
@@ -15,8 +15,8 @@ export const appRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "forecast",
-        element: <Forecast />,
+        path: "data",
+        element: <Data />,
       },
       {
         path: "locations",
