@@ -5,7 +5,7 @@ import { createContext, useContext, type PropsWithChildren } from "react";
 interface WeatherContextType {
   weatherData: WeatherResponse | null;
   loading: boolean;
-  getData: any;
+  getData: (city:string)=>void  ;
   forecastData: ForecastItem[]
 }
 

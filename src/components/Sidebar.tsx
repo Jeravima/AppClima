@@ -1,6 +1,5 @@
 import {
   FaCloudSun,
-  FaCloudSunRain,
   FaHome,
   FaLocationArrow,
   FaChartArea,
