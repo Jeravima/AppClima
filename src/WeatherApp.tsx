@@ -1,10 +1,15 @@
 import { RouterProvider } from "react-router"
 import { appRouter } from "./routes/routes"
+import { SearchContextProvider } from "./context/SearchContext"
+
+
 
 export const WeatherApp = () => {
   return (
-    <div>
-        <RouterProvider router={appRouter}/>
-    </div>
-  )
+    
+      <SearchContextProvider>
+        <RouterProvider router={appRouter} />
+      </SearchContextProvider>
+      
+  );
 }

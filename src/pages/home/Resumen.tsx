@@ -1,4 +1,4 @@
-import type { WeatherResponse } from "@/types/weather";
+import type { WeatherResponse } from "@/types/responseAPI";
 import { WinCard } from "./WindCard";
 import { HumidityCard } from "./HumidityCard";
 
@@ -7,13 +7,13 @@ interface Props {
   weatherData: WeatherResponse | null;
 }
 export const Resumen = ({ className = "", weatherData }: Props) => {
-
-  const hour = new Date((weatherData?.dt ?? 0)*1000).toLocaleTimeString('es-ES',{
-    hour:'2-digit',
-    minute:'2-digit'
-  })
-
-
+  const hour = new Date((weatherData?.dt ?? 0) * 1000).toLocaleTimeString(
+    "es-ES",
+    {
+      hour: "2-digit",
+      minute: "2-digit",
+    },
+  );
 
   return (
     <div
@@ -43,8 +43,7 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
 
       <div className="flex gap-2 mt-2">
         <WinCard wind={weatherData?.wind.speed} />
-        <HumidityCard humidity={weatherData?.main.humidity}/>
-
+        <HumidityCard humidity={weatherData?.main.humidity} />
       </div>
     </div>
   );

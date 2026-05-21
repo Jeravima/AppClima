@@ -1,13 +1,13 @@
-
-
 import { Navbar } from "@/components/Navbar";
-import { Resumen } from "./home-components/Resumen";
-import { useWeather } from "@/hook/useWeather";
-import { Forecast } from "./home-components/Forecast";
-import { LinearChart } from "./home-components/LinearChart";
+import { Resumen } from "./Resumen";
+//import { useWeather } from "@/hook/useWeather";
+import { Forecast } from "./Forecast";
+import { LinearChart } from "./LinearChart";
+import {  useWeatherContext } from "@/context/SearchContext";
 
 export const Home = () => {
-  const { getData, weatherData, loading, forecastData } = useWeather();
+  //const { forecastData } = useWeather();
+  const {getData, weatherData, loading, forecastData} = useWeatherContext()
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-100">
       <Navbar onSearch={getData} />

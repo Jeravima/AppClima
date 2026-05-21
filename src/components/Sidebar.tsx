@@ -3,6 +3,7 @@ import {
   FaCloudSunRain,
   FaHome,
   FaLocationArrow,
+  FaChartArea,
 } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 
@@ -35,8 +36,8 @@ export const Sidebar = () => {
           to="/forecast"
           className={`${pathname === "/forecast" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
-          <FaCloudSunRain size={24} />
-          <span className="font-medium">Forecast</span>
+          <FaChartArea size={24}/>
+          <span className="font-medium">Data</span>
         </Link>
         <Link
           to="/locations"

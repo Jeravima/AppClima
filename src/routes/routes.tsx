@@ -1,5 +1,5 @@
-import { Forecast } from "@/pages/Forecast";
-import { Home } from "@/pages/Home";
+import { Forecast } from "@/pages/datas/Data";
+import { Home } from "@/pages/home/Home";
 import { Layout } from "@/pages/layout/Layout";
 import { Locations } from "@/pages/Locations";
 import { Settings } from "@/pages/Settings";

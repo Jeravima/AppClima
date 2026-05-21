@@ -1,4 +1,4 @@
-import type { WeatherResponse } from "@/types/weather";
+import type { WeatherResponse } from "@/types/responseAPI";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -45,7 +45,6 @@ export const useWeather = () => {
       const forecast = await forecastResponse.json();
 
       const now = Date.now() / 1000;
-      
 
       const forecastList = forecast.list
         .filter((item: any) => item.dt >= now)
@@ -60,7 +59,6 @@ export const useWeather = () => {
 
       setForecastData(formattedForecast);
 
-      
       console.log(forecastData);
     } catch (error) {
       toast.error("Algo salió mal");
