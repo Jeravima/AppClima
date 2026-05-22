@@ -33,7 +33,7 @@ export const Layout = () => {
         <Sidebar />
       </div>
 
-      {/* Main Content */}
+      
       <div className="flex-1 w-full pt-16 md:pt-0">
         <Outlet />
       </div>

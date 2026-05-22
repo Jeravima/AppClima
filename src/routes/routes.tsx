@@ -2,6 +2,7 @@ import { Data } from "@/pages/datas/Data";
 import { Home } from "@/pages/home/Home";
 import { Layout } from "@/pages/layout/Layout";
 import { Locations } from "@/pages/Locations";
+import { NotFound } from "@/pages/not-found/NotFound";
 import { Settings } from "@/pages/Settings";
 import { createBrowserRouter } from "react-router";
 
@@ -15,8 +16,8 @@ export const appRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "data",
-        element: <Data />,
+        path:'data',
+        element:<Data/>
       },
       {
         path: "locations",
@@ -31,6 +32,6 @@ export const appRouter = createBrowserRouter([
 
   {
     path: "*",
-    element: <Home />,
+    element: <NotFound />,
   },
 ]);

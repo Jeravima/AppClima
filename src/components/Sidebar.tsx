@@ -26,28 +26,28 @@ export const Sidebar = () => {
       <div className="flex flex-col gap-6 md:gap-10 mt-6 md:mt-10 w-full">
         <Link
           to="/"
-          className={`${pathname === "/" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
+          className={`${pathname === "/" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaHome size={24} />
           <span className="font-medium">Home</span>
         </Link>
         <Link
-          to="/forecast"
-          className={`${pathname === "/forecast" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
+          to="/data"
+          className={`${pathname === "/forecast" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaChartArea size={24}/>
           <span className="font-medium">Data</span>
         </Link>
         <Link
           to="/locations"
-          className={`${pathname === "/locations" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
+          className={`${pathname === "/locations" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaLocationArrow size={20} />
           <span className="font-medium">Locations</span>
         </Link>
         <Link
           to="/settings"
-          className={`${pathname === "/settings" ? "bg-olive-500 text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
+          className={`${pathname === "/settings" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <IoMdSettings size={24} />
           <span className="font-medium">Settings</span>
