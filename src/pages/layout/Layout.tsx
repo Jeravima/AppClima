@@ -6,10 +6,13 @@ import { HiMenu, HiX } from "react-icons/hi";
 export const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  
+
   return (
     <div className="flex min-h-screen flex-col md:flex-row bg-gray-100">
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
+        
         className="md:hidden fixed top-4 left-4 z-50 p-2 bg-gray-500 text-white rounded-lg"
       >
         {sidebarOpen ? <HiX size={24} /> : <HiMenu size={24} />}
@@ -19,6 +22,7 @@ export const Layout = () => {
         <div
           className="fixed inset-0 bg-black/50 md:hidden z-40"
           onClick={() => setSidebarOpen(false)}
+          
         />
       )}
 

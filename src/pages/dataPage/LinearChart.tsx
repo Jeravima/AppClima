@@ -1,10 +1,12 @@
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import type { ForecastItem } from "@/hook/useWeather";
 
 import {
-  Area,
-  AreaChart,
+  
   CartesianGrid,
+  Line,
+  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -32,43 +34,27 @@ export const LinearChart = ({ className = "", data }: Props) => {
           <CardTitle className="text-lg md:text-xl">Temperatura</CardTitle>
         </CardHeader>
 
-        <CardContent className="h-48 md:h-60 lg:h-80">
+        <CardContent className="h-48 md:h-60 lg:h-80 ">
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart
-              data={chartData}
-              margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <LineChart data={chartData}>
+              <CartesianGrid strokeDasharray="3 3" />
 
-              <XAxis
-                dataKey="hour"
-                tick={{ fontSize: 12 }}
-                angle={-45}
-                textAnchor="end"
-                height={60}
-              />
+              <XAxis dataKey="hour" />
+              <YAxis dataKey='temp' />
 
-              <YAxis dataKey="temp" tick={{ fontSize: 12 }} />
+              <Tooltip />
 
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "#f3f4f6",
-                  border: "1px solid #d1d5db",
-                  borderRadius: "8px",
-                }}
-              />
-
-              <Area
+              <Line
                 type="monotone"
                 dataKey="temp"
                 stroke="#2563eb"
-                strokeWidth={2}
-                fill="#dbeafe"
+                strokeWidth={3}
               />
-            </AreaChart>
+            </LineChart>
           </ResponsiveContainer>
         </CardContent>
       </Card>
     </div>
   );
 };
+

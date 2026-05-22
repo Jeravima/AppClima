@@ -1,8 +1,8 @@
-import { Data } from "@/pages/datas/Data";
-import { Home } from "@/pages/home/Home";
+import { Data } from "@/pages/dataPage/Data";
+import { Home } from "@/pages/homePage/Home";
 import { Layout } from "@/pages/layout/Layout";
 import { Locations } from "@/pages/Locations";
-import { NotFound } from "@/pages/not-found/NotFound";
+import { NotFound } from "@/pages/not-foundPage/NotFound";
 import { Settings } from "@/pages/Settings";
 import { createBrowserRouter } from "react-router";
 

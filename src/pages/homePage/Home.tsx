@@ -1,12 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Resumen } from "./Resumen";
-//import { useWeather } from "@/hook/useWeather";
 import { Forecast } from "./Forecast";
-import { LinearChart } from "./LinearChart";
 import {  useWeatherContext } from "@/context/SearchContext";
+import { AreaChar } from "./AreaChart";
 
 export const Home = () => {
-  //const { forecastData } = useWeather();
+  
   const {getData, weatherData, loading, forecastData} = useWeatherContext()
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-100">
@@ -25,7 +24,7 @@ export const Home = () => {
               className="col-span-1 md:col-span-5 lg:col-span-4"
               weatherData={weatherData}
             />
-            <LinearChart
+            <AreaChar
               className="col-span-1 md:col-span-7 lg:col-span-8"
               data={forecastData}
             />
