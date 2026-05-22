@@ -33,7 +33,7 @@ export const Sidebar = () => {
         </Link>
         <Link
           to="/data"
-          className={`${pathname === "/forecast" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
+          className={`${pathname === "/data" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-white text-sm md:text-base`}
         >
           <FaChartArea size={24}/>
           <span className="font-medium">Data</span>
