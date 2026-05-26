@@ -39,7 +39,7 @@ export const LinearChart = ({ className = "", data }: Props) => {
         </CardHeader>
 
         <CardContent className="h-48 md:h-60 lg:h-80 ">
-          <div className=" h-70 w-full">
+          <div className=" h-full w-full">
             <ResponsiveContainer width={"100%"} height={"100%"}>
               <LineChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />

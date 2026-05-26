@@ -15,7 +15,7 @@ export const MaxAndMin = ({ temp_min, temp_max }: Props) => {
         </div>
         <div>
           <MoveDown color="blue" />
-          <p>{Math.round(temp_min ?? 0)-3}°</p>
+          <p>{Math.round(temp_min ?? 0)}°</p>
         </div>
       </div>
     </div>

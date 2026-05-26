@@ -1,5 +1,7 @@
 import { useWeatherContext } from "@/context/SearchContext";
 import { LinearChart } from "./LinearChart";
+import { HumidityCard } from "./HumidityCard";
+import {WinCard} from './WindCard'
 
 export const Data = () => {
   const { weatherData, forecastData } = useWeatherContext();
@@ -19,11 +21,18 @@ export const Data = () => {
                 data={forecastData}
                 className="col-span-1 md:col-span-7 lg:col-span-8"
               />
+              <WinCard className="col-span-1 md:col-span-7 lg:col-span-2"  wind={weatherData.wind.speed}/>
+              <HumidityCard
+                className="col-span-1 md:col-span-7 lg:col-span-2"
+                humidity={weatherData.main.humidity}
+              />
             </div>
           </div>
         ) : (
           <div className="flex items-center justify-center min-h-screen">
-            <p className="text-gray-500 font-bold text-2xl">No hay datos para mostrar</p>
+            <p className="text-gray-500 font-bold text-2xl">
+              No hay datos para mostrar
+            </p>
           </div>
         )}
       </main>
