@@ -1,6 +1,5 @@
 import type { WeatherResponse } from "@/types/responseAPI";
-import { WinCard } from "./WindCard";
-import { HumidityCard } from "./HumidityCard";
+
 import { MaxAndMin } from "./MaxAndMin";
 
 interface Props {
