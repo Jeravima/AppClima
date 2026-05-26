@@ -23,7 +23,7 @@ export const Data = () => {
           </div>
         ) : (
           <div className="flex items-center justify-center min-h-screen">
-            <p className="text-gray-500 font-bold text-2xl">No Data</p>
+            <p className="text-gray-500 font-bold text-2xl">No hay datos para mostrar</p>
           </div>
         )}
       </main>

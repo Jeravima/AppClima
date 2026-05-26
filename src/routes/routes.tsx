@@ -1,5 +1,5 @@
-import { Data } from "@/pages/dataPage/Data";
-import { Home } from "@/pages/homePage/Home";
+import { Data } from "@/pages/dataPage/DataPage";
+import { Home } from "@/pages/homePage/HomePage";
 import { Layout } from "@/pages/layout/Layout";
 import { Locations } from "@/pages/Locations";
 import { NotFound } from "@/pages/not-foundPage/NotFound";

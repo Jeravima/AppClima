@@ -7,6 +7,7 @@ export interface ForecastItem {
   temp: number;
   description: string;
   icon: string;
+  feels_like: number
 }
 
 export const useWeather = () => {
@@ -48,13 +49,15 @@ export const useWeather = () => {
 
       const forecastList = forecast.list
         .filter((item: any) => item.dt >= now)
-        .slice(2, 10);
+        .slice(0, 8);
+        console.log('ForecastList',forecastList)
 
       const formattedForecast = forecastList.map((item: any) => ({
         dt_txt: item.dt_txt,
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
         icon: item.weather[0].icon,
+        feels_like: Math.round(item.main.feels_like)
       }));
 
       setForecastData(formattedForecast);

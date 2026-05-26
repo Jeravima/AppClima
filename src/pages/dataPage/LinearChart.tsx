@@ -19,39 +19,56 @@ interface Props {
 }
 
 export const LinearChart = ({ className = "", data }: Props) => {
+
   const chartData = data.map((item) => ({
     hour: new Date(item.dt_txt).toLocaleTimeString("en-US", {
       hour: "numeric",
       hour12: true,
     }),
     temp: item.temp,
+    feels_like: item.feels_like
   }));
 
   return (
     <div className={`${className}`}>
       <Card className="h-full">
         <CardHeader className="pb-3 md:pb-4">
-          <CardTitle className="text-lg md:text-xl">Temperatura</CardTitle>
+          <CardTitle className="text-lg md:text-xl text-center">
+            Temperatura y sensación térmica
+          </CardTitle>
         </CardHeader>
 
         <CardContent className="h-48 md:h-60 lg:h-80 ">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" />
+          <div className=" h-70 w-full">
+            <ResponsiveContainer width={"100%"} height={"100%"}>
+              <LineChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
 
-              <XAxis dataKey="hour" />
-              <YAxis dataKey='temp' />
+                <XAxis dataKey="hour" />
+                <YAxis
+                  dataKey="temp"
+                  width="auto"
+                  domain={["dataMin - 10", "dataMax + 10"]}
+                />
 
-              <Tooltip />
+                <Tooltip />
 
-              <Line
-                type="monotone"
-                dataKey="temp"
-                stroke="#2563eb"
-                strokeWidth={3}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+                <Line
+                  type="monotone"
+                  dataKey="temp"
+                  stroke="#2563eb"
+                  strokeWidth={3}
+                />
+
+                <Line
+                  type="natural"
+                  dataKey="feels_like"
+                  stroke="#DE2E23"
+                  strokeWidth={3}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </CardContent>
       </Card>
     </div>
