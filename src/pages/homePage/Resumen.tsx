@@ -1,6 +1,7 @@
 import type { WeatherResponse } from "@/types/responseAPI";
 import { WinCard } from "./WindCard";
 import { HumidityCard } from "./HumidityCard";
+import { MaxAndMin } from "./MaxAndMin";
 
 interface Props {
   className: string;
@@ -38,12 +39,13 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
         </span>
       </h2>
       <p className="font-normal text-slate-600">
-        Sensación de {Math.round(weatherData?.main.feels_like ?? 0)}°
+        Sensación térmica de {Math.round(weatherData?.main.feels_like ?? 0)}°
       </p>
 
-      <div className="flex gap-2 mt-2">
-        <WinCard wind={weatherData?.wind.speed} />
-        <HumidityCard humidity={weatherData?.main.humidity} />
+      <div className="flex gap-2 mt-4">
+        {/* <WinCard wind={weatherData?.wind.speed} />
+        <HumidityCard humidity={weatherData?.main.humidity} /> */}
+        <MaxAndMin temp_max={weatherData?.main.temp_max} temp_min={weatherData?.main.temp_min}/>
       </div>
     </div>
   );
