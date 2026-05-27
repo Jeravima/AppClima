@@ -1,10 +1,9 @@
-
-
 import { useWeatherContext } from "@/context/SearchContext";
 import { LinearChart } from "./LinearChart";
 import { HumidityCard } from "./HumidityCard";
 import { WinCard } from "./WindCard";
 import { WindDirectionCard } from "./WindDirectionCard";
+import { Separator } from "@/components/ui/separator";
 
 export const Data = () => {
   const { weatherData, forecastData } = useWeatherContext();
@@ -19,23 +18,29 @@ export const Data = () => {
                 {weatherData?.name}
               </h1>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+            <Separator/>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mt-4">
               <LinearChart
                 data={forecastData}
                 className="col-span-1 sm:col-span-2 md:col-span-7 lg:col-span-8"
               />
-              <WinCard
-                className="col-span-1 sm:col-span-1 md:col-span-7 lg:col-span-2"
-                wind={weatherData.wind.speed}
-              />
-              <HumidityCard
-                className="col-span-1 sm:col-span-1 md:col-span-7 lg:col-span-2"
-                humidity={weatherData.main.humidity}
-              />
-              <WindDirectionCard
-                className="col-span-1 sm:col-span-1 md:col-span-7 lg:col-span-2"
-                winDeg={weatherData.wind.deg}
-              />
+
+              <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-4 flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+                <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+                  <WinCard
+                    className="col-span-1 flex-1"
+                    wind={weatherData.wind.speed}
+                  />
+                  <HumidityCard
+                    className="col-span-1 flex-1"
+                    humidity={weatherData.main.humidity}
+                  />
+                </div>
+                <WindDirectionCard
+                  className="col-span-1 w-full"
+                  winDeg={weatherData.wind.deg}
+                />
+              </div>
             </div>
           </div>
         ) : (
