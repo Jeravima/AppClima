@@ -7,7 +7,8 @@ export interface ForecastItem {
   temp: number;
   description: string;
   icon: string;
-  feels_like: number
+  feels_like: number;
+  pop:number;
 }
 
 export const useWeather = () => {
@@ -57,12 +58,14 @@ export const useWeather = () => {
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
         icon: item.weather[0].icon,
-        feels_like: Math.round(item.main.feels_like)
+        feels_like: Math.round(item.main.feels_like),
+        pop: item.pop
+        
       }));
 
       setForecastData(formattedForecast);
 
-      console.log(forecastData);
+      console.log('ForecastData',forecastData);
     } catch (error) {
       toast.error("Algo salió mal");
     } finally {

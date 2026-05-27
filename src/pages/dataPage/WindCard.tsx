@@ -10,11 +10,11 @@ export const WinCard = ({ wind,className='' }: Props) => {
   return (
     <div className={`${className}`}>
       <Card>
-        <CardTitle className="text-center text-lg md:text-xl">Viento</CardTitle>
+        <CardTitle className="text-center text-base xl:text-xl">Viento</CardTitle>
         <CardContent>
           <div className="flex flex-col gap-1 items-center">
-            <Wind size={50} />
-            <p className="font-medium ">
+            <Wind size={40} color="blue" />
+            <p className="text-lg xl:text-xl ">
               {Math.round(wind ?? 0)}
               <span> km/h</span>{" "}
             </p>

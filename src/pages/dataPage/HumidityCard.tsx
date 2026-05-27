@@ -1,5 +1,5 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import {  Cloudy } from "lucide-react";
+import {   Droplets } from "lucide-react";
 
 interface Props {
   humidity?: number;
@@ -10,13 +10,13 @@ export const HumidityCard = ({ humidity, className='' }: Props) => {
   return (
     <div className={`${className}`}>
       <Card>
-        <CardTitle className="text-center text-lg md:text-xl">
+        <CardTitle className="text-center text-base xl:text-xl">
           Humedad
         </CardTitle>
         <CardContent>
           <div className="flex flex-col gap-1 items-center">
-            <Cloudy size={50} />
-            <p className="text-lg xl:text-lg">{Math.round(humidity ?? 0)}%</p>
+            <Droplets size={40} color="gray" />
+            <p className="text-lg xl:text-xl">{Math.round(humidity ?? 0)}%</p>
           </div>
         </CardContent>
       </Card>
