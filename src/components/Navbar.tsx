@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { Switch } from "./ui/switch";
+import { useTheme } from "@/context/theme-provider";
+import {Sun,Moon} from 'lucide-react'
 
 interface Props {
   onSearch: (city: string) => void;
@@ -9,6 +10,9 @@ interface Props {
 export const Navbar = ({ onSearch }: Props) => {
   const [city, setCity] = useState("");
 
+  const {theme,setTheme}= useTheme()
+  const isDark = theme === 'dark'
+
   const submit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setCity("");
@@ -16,7 +20,7 @@ export const Navbar = ({ onSearch }: Props) => {
   };
 
   return (
-    <nav className="w-full px-4 md:px-6 py-4 shadow-md">
+    <nav className="w-full px-4 md:px-6 py-4 shadow-xs">
       <div className="flex justify-between items-center">
         <form
           onSubmit={submit}
@@ -36,9 +40,15 @@ export const Navbar = ({ onSearch }: Props) => {
             <CiSearch size={25} />
           </button>
         </form>
-        <div className="mr-4">
-        <Switch  />
-
+        <div
+          className="mr-4 cursor-pointer"
+          onClick={() => setTheme(isDark ? "light" : "dark")}
+        >
+          {isDark ? (
+            <Sun className="h-6 w-6 text-yellow-400 transition-all" />
+          ) : (
+            <Moon className="h-6 w-6 text-gray-400 transition-all" />
+          )}
         </div>
       </div>
     </nav>

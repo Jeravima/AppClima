@@ -42,8 +42,7 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
       </p>
 
       <div className="flex gap-2 mt-4">
-        {/* <WinCard wind={weatherData?.wind.speed} />
-        <HumidityCard humidity={weatherData?.main.humidity} /> */}
+      
         <MaxAndMin temp_max={weatherData?.main.temp_max} temp_min={weatherData?.main.temp_min}/>
       </div>
     </div>

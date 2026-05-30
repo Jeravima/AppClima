@@ -8,7 +8,7 @@ export const Home = () => {
   
   const {getData, weatherData, loading, forecastData} = useWeatherContext()
   return (
-    <div className="flex flex-col w-full min-h-screen bg-gray-100">
+    <div className="flex flex-col w-full min-h-screen ">
       <Navbar onSearch={getData} />
       <main className="flex-1 p-4 md:p-6 lg:p-8">
         <h1 className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 font-bold text-gray-800 text-center">
