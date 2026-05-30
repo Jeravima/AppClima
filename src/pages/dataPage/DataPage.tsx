@@ -9,12 +9,12 @@ export const Data = () => {
   const { weatherData, forecastData } = useWeatherContext();
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-gray-100">
+    <div className="flex flex-col w-full min-h-screen bg-gray-100 dark:bg-neutral-900">
       <main className=" flex-1 p-2 sm:p-4 md:p-6 lg:p-8">
         {weatherData ? (
           <div>
             <div className="flex  justify-center mb-3 sm:mb-4 ">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-100">
                 {weatherData?.name}
               </h1>
             </div>

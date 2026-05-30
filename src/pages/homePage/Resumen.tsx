@@ -17,7 +17,7 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
 
   return (
     <div
-      className={`shadow-lg bg-linear-to-br from-slate-100 to-slate-200 flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className}`}
+      className={`shadow-lg bg-linear-to-br from-slate-100 to-slate-200 flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className} `}
     >
       <img
         src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}

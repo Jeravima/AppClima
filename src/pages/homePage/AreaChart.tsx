@@ -39,7 +39,7 @@ export const AreaChar = ({ className = "", data }: Props) => {
                 data={chartData}
                 margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
               >
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
 
                 <XAxis
                   dataKey="hour"
@@ -49,7 +49,7 @@ export const AreaChar = ({ className = "", data }: Props) => {
                   height={60}
                 />
 
-                <YAxis dataKey="temp" tick={{ fontSize: 12 }} />
+                <YAxis dataKey="temp" tick={{ fontSize: 12 }} unit="°"/>
 
                 <Tooltip
                   contentStyle={{
