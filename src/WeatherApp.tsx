@@ -5,10 +5,10 @@ import { ThemeProvider } from "./context/theme-provider";
 
 export const WeatherApp = () => {
   return (
-    <SearchContextProvider>
-      <ThemeProvider defaultTheme="dark">
+    <ThemeProvider defaultTheme="dark">
+      <SearchContextProvider>
         <RouterProvider router={appRouter} />
-      </ThemeProvider>
-    </SearchContextProvider>
+      </SearchContextProvider>
+    </ThemeProvider>
   );
 };

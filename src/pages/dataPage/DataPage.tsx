@@ -9,7 +9,7 @@ export const Data = () => {
   const { weatherData, forecastData } = useWeatherContext();
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-gray-100 dark:bg-neutral-900">
+    <div className="flex flex-col w-full min-h-screen bg-background dark:bg-background">
       <main className=" flex-1 p-2 sm:p-4 md:p-6 lg:p-8">
         {weatherData ? (
           <div>
@@ -22,7 +22,7 @@ export const Data = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mt-4">
               <LinearChart
                 data={forecastData}
-                className="col-span-1 sm:col-span-2 md:col-span-7 lg:col-span-8"
+                className="col-span-1 sm:col-span-2 md:col-span-7 lg:col-span-8 hover:shadow-xl"
               />
 
               <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-4 flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-6">

@@ -8,7 +8,7 @@ export interface ForecastItem {
   description: string;
   icon: string;
   feels_like: number;
-  pop:number;
+  pop: number;
 }
 
 export const useWeather = () => {
@@ -38,7 +38,6 @@ export const useWeather = () => {
       }
 
       setWeatherData(data);
-      console.log(data);
 
       const forecastResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${_cityName}&appid=${import.meta.env.VITE_API_KEY}&units=metric&lang=es`,
@@ -51,7 +50,6 @@ export const useWeather = () => {
       const forecastList = forecast.list
         .filter((item: any) => item.dt >= now)
         .slice(0, 8);
-        console.log('ForecastList',forecastList)
 
       const formattedForecast = forecastList.map((item: any) => ({
         dt_txt: item.dt_txt,
@@ -59,13 +57,12 @@ export const useWeather = () => {
         description: item.weather[0].description,
         icon: item.weather[0].icon,
         feels_like: Math.round(item.main.feels_like),
-        pop: item.pop
-        
+        pop: item.pop,
       }));
 
       setForecastData(formattedForecast);
 
-      console.log('ForecastData',forecastData);
+      console.log("ForecastData", forecastData);
     } catch (error) {
       toast.error("Algo salió mal");
     } finally {

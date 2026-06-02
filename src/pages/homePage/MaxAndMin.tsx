@@ -10,11 +10,11 @@ export const MaxAndMin = ({ temp_min, temp_max }: Props) => {
     <div>
       <div className="flex  gap-5">
         <div>
-          <MoveUp color='red'/>
+          <MoveUp color='red' className="drop-shadow-lg "/>
           <p className="text-red-800">{Math.round(temp_max ?? 0)+2}°</p>
         </div>
         <div>
-          <MoveDown color="blue" />
+          <MoveDown color="blue" className="drop-shadow-lg"/>
           <p className="text-blue-800">{Math.round(temp_min ?? 0)}°</p>
         </div>
       </div>

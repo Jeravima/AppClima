@@ -20,7 +20,7 @@ export const Navbar = ({ onSearch }: Props) => {
   };
 
   return (
-    <nav className="w-full px-4 md:px-6 py-4 shadow-xs">
+    <nav className="min-w-max px-4 md:px-6 py-4 shadow-xs border border-border mx-8 mt-4  bg-white/10 rounded-2xl  backdrop-blur-lg">
       <div className="flex justify-between items-center">
         <form
           onSubmit={submit}

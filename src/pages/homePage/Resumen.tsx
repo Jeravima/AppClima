@@ -17,27 +17,27 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
 
   return (
     <div
-      className={`shadow-lg bg-linear-to-br from-slate-100 to-slate-200 flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className} `}
+      className={`shadow-lg bg-white/10 backdrop-blur-lg flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className} `}
     >
       <img
         src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
         alt="iconWeather"
         className="h-24 md:h-32 lg:h-40 w-24 md:w-32 lg:w-40 drop-shadow-lg object-contain"
       />
-      <p className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-800 mt-2">
+      <p className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mt-2">
         {Math.round(weatherData?.main.temp ?? 0)}°
       </p>
       <p>{hour}</p>
-      <p className="first-letter:uppercase text-sm md:text-base lg:text-lg text-slate-600 mt-2">
+      <p className="first-letter:uppercase text-sm md:text-base lg:text-lg text-muted-foreground mt-2">
         {weatherData?.weather[0].description}
       </p>
-      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mt-3 text-center">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mt-3 text-center">
         {weatherData?.name},
-        <span className="text-sm md:text-lg lg:text-xl font-medium text-slate-600 block md:inline md:ml-2">
+        <span className="text-sm md:text-lg lg:text-xl font-medium text-muted-foreground block md:inline md:ml-2">
           {weatherData?.sys.country}
         </span>
       </h2>
-      <p className="font-normal text-slate-600">
+      <p className="font-normal text-foreground">
         Sensación térmica de {Math.round(weatherData?.main.feels_like ?? 0)}°
       </p>
 
