@@ -13,7 +13,7 @@ export const Sidebar = () => {
 
 
   return (
-    <aside className="w-64 h-full flex flex-col bg-sidebar  dark:bg-white/20 dark:backdrop-blur-lg dark:border dark:border-border p-4 md:p-6 shadow-xl m-4 rounded-2xl">
+    <aside className="w-64 h-full flex flex-col bg-sidebar  dark:bg-white/20 dark:backdrop-blur-lg dark:border dark:border-border p-4 md:p-6 shadow-xl md:m-4 rounded-2xl">
       <div className="flex flex-col items-center gap-2 pb-6 md:pb-8 border-b border-white">
         <div className="relative h-12 md:h-14 w-12 md:w-14 grid place-items-center rounded-2xl bg-background">
           {" "}

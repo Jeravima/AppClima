@@ -62,7 +62,7 @@ export const useWeather = () => {
 
       setForecastData(formattedForecast);
 
-      console.log("ForecastData", forecastData);
+    
     } catch (error) {
       toast.error("Algo salió mal");
     } finally {

@@ -30,7 +30,7 @@ export const Layout = () => {
         className={`
           fixed top-0 left-0 bottom-0 z-40 w-64
           transform transition-transform duration-200 ease-in-out
-           md:translate-x-0 md:relative md:block
+           md:translate-x-0 md:relative md:block 
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
