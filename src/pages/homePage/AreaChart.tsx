@@ -29,17 +29,23 @@ export const AreaChar = ({ className = "", data }: Props) => {
     <div className={`${className}`}>
       <Card className="h-full">
         <CardHeader className="pb-3 md:pb-4">
-          <CardTitle className="text-lg md:text-xl">Temperatura</CardTitle>
+          <CardTitle className="text-lg md:text-xl font-bold text-center">
+            Temperatura
+          </CardTitle>
         </CardHeader>
 
         <CardContent className="h-48 md:h-60 lg:h-80">
-          <div className="h-full w-full">
+          <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={chartData}
                 margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
               >
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="#e5e7eb"
+                  vertical={false}
+                />
 
                 <XAxis
                   dataKey="hour"
@@ -47,9 +53,10 @@ export const AreaChar = ({ className = "", data }: Props) => {
                   angle={-45}
                   textAnchor="end"
                   height={60}
+                  
                 />
 
-                <YAxis dataKey="temp" tick={{ fontSize: 12 }} unit="°"/>
+                <YAxis dataKey="temp" tick={{ fontSize: 12 }} unit="°" />
 
                 <Tooltip
                   contentStyle={{

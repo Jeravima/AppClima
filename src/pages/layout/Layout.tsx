@@ -9,7 +9,7 @@ export const Layout = () => {
   
 
   return (
-    <div className="flex min-h-screen flex-col md:flex-row bg-gray-100">
+    <div className="flex min-h-screen flex-col md:flex-row bg-background">
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
         
