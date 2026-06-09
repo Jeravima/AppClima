@@ -51,7 +51,26 @@ export const LinearChart = ({ className = "", data }: Props) => {
                   domain={["dataMin - 10", "dataMax + 10"]}
                 />
 
-                <Tooltip />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="rounded border bg-background p-2 shadow-sm">
+                          <div className="flex flex-col items-center gap-2">
+                            <div className="space-x-1">
+                              <span>Temperatura</span>
+                              <span>{payload[0].value}°</span>
+                            </div>
+                            <div className="space-x-1">
+                              <span>Sensación térmica</span>
+                              <span>{payload[1].value}°</span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  }}
+                />
 
                 <Line
                   type="monotone"

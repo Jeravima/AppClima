@@ -71,9 +71,9 @@ export const useWeather = () => {
   };
 
   return {
+    getData,
     weatherData,
     forecastData,
-    getData,
     loading,
   };
 };

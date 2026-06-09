@@ -1,11 +1,11 @@
 import { useWeatherContext } from "@/context/SearchContext"
 
 
-export const Locations = () => {
+export const Favorites = () => {
   const {weatherData} = useWeatherContext()
   return (
     <div>
-        <h1>Locations</h1>
+        <h1>Favorites</h1>
         <h2>{weatherData?.name}</h2>
     </div>
   )

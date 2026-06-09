@@ -7,13 +7,7 @@ interface Props {
   weatherData: WeatherResponse | null;
 }
 export const Resumen = ({ className = "", weatherData }: Props) => {
-  const hour = new Date((weatherData?.dt ?? 0) * 1000).toLocaleTimeString(
-    "es-ES",
-    {
-      hour: "2-digit",
-      minute: "2-digit",
-    },
-  );
+  
 
   return (
     <div
@@ -27,7 +21,7 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
       <p className="text-8xl md:text-5xl lg:text-7xl font-bold text-foreground mt-2">
         {Math.round(weatherData?.main.temp ?? 0)}°
       </p>
-      <p>{hour}</p>
+      
       <p className="first-letter:uppercase text-sm md:text-base lg:text-lg text-muted-foreground mt-2">
         {weatherData?.weather[0].description}
       </p>

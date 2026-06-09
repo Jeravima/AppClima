@@ -58,7 +58,19 @@ export const AreaChar = ({ className = "", data }: Props) => {
 
                 <YAxis dataKey="temp" tick={{ fontSize: 12 }} unit="°" />
 
-                <Tooltip
+                <Tooltip content={({active,payload})=>{
+                  if(active && payload && payload.length){
+                    return(
+                      <div className="rounded border bg-background p-2 shadow-sm">
+                        <div className="flex flex-col items-center gap-2">
+
+                        <span>Temperatura</span>
+                        <span>{payload[0].value}°</span>
+                        </div>
+                      </div>
+                    )
+                  }
+                }}
                   contentStyle={{
                     backgroundColor: "#f3f4f6",
                     border: "1px solid #d1d5db",

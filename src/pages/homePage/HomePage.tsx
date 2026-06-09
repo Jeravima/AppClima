@@ -6,14 +6,14 @@ import { AreaChar } from "./AreaChart";
 
 export const Home = () => {
   
-  const {getData, weatherData, loading, forecastData} = useWeatherContext()
+   const {getData, weatherData, loading, forecastData} = useWeatherContext()
+ 
+
   return (
     <div className="flex flex-col w-full min-h-screen dark:bg-background ">
       <Navbar onSearch={getData} />
       <main className="flex-1 p-4 md:p-6 lg:p-8">
-        {/* <h1 className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 font-bold text-gray-800 text-center">
-          Dashboard Clima
-        </h1> */}
+        
         {loading ? (
           <div className="flex items-center justify-center py-12 md:py-24">
             <p className="text-gray-600 text-base md:text-lg">Cargando...</p>
