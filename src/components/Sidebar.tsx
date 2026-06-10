@@ -2,7 +2,6 @@ import { Heart } from "lucide-react";
 import {
   FaCloudSun,
   FaHome,
-  FaLocationArrow,
   FaChartArea,
 } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
