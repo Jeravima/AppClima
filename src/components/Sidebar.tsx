@@ -1,3 +1,4 @@
+import { Heart } from "lucide-react";
 import {
   FaCloudSun,
   FaHome,
@@ -39,11 +40,11 @@ export const Sidebar = () => {
           <span className="font-medium">Data</span>
         </Link>
         <Link
-          to="/locations"
-          className={`${pathname === "/locations" ? "bg-white/30 backdrop-blur-lg text-white " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-sidebar-foreground text-sm md:text-base`}
+          to="/favorites"
+          className={`${pathname === "/favorites" ? "bg-white/30 backdrop-blur-lg text-white " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-sidebar-foreground text-sm md:text-base`}
         >
-          <FaLocationArrow size={20} />
-          <span className="font-medium">Locations</span>
+          <Heart  size={20} />
+          <span className="font-medium">Favoritos</span>
         </Link>
         <Link
           to="/settings"

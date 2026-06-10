@@ -1,18 +1,56 @@
 import type { WeatherResponse } from "@/types/responseAPI";
+import {Heart} from 'lucide-react'
 
 import { MaxAndMin } from "./MaxAndMin";
+import { useFavorites } from "@/context/FavoriteCityContex";
 
 interface Props {
   className: string;
   weatherData: WeatherResponse | null;
 }
 export const Resumen = ({ className = "", weatherData }: Props) => {
+
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const toggleFavorite = () => {
+    if (!weatherData) return;
+
+    if (isFavorite(weatherData.id)) {
+      removeFavorite(weatherData.id);
+    } else {
+      addFavorite({
+        id: weatherData.id,
+        name: weatherData.name,
+        country: weatherData.sys.country,
+        temp: weatherData.main.temp,
+        feels_like: weatherData.main.feels_like,
+        description: weatherData.weather[0].description,
+        icon: weatherData.weather[0].icon,
+       
+      });
+    }
+  };
   
 
   return (
     <div
       className={`shadow-lg bg-white/10 backdrop-blur-lg border border-border flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className} `}
     >
+      <button
+        onClick={toggleFavorite}
+        className="cursor-pointer translate-x-30 transition-colors hover:scale-110"
+        title={
+          isFavorite(weatherData?.id ?? 0)
+            ? "Remover de favoritos"
+            : "Guardar como favorito"
+        }
+      >
+        <Heart
+          size={26}
+          color="red"
+          fill={isFavorite(weatherData?.id ?? 0) ? "red" : "none"}
+        />
+      </button>
       <img
         src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
         alt="iconWeather"
@@ -21,7 +59,7 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
       <p className="text-8xl md:text-5xl lg:text-7xl font-bold text-foreground mt-2">
         {Math.round(weatherData?.main.temp ?? 0)}°
       </p>
-      
+
       <p className="first-letter:uppercase text-sm md:text-base lg:text-lg text-muted-foreground mt-2">
         {weatherData?.weather[0].description}
       </p>
@@ -36,8 +74,10 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
       </p>
 
       <div className="flex gap-2 mt-4">
-      
-        <MaxAndMin temp_max={weatherData?.main.temp_max} temp_min={weatherData?.main.temp_min}/>
+        <MaxAndMin
+          temp_max={weatherData?.main.temp_max}
+          temp_min={weatherData?.main.temp_min}
+        />
       </div>
     </div>
   );
