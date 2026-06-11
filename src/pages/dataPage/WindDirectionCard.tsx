@@ -17,7 +17,7 @@ export const WindDirectionCard = ({className='', winDeg}:Props) => {
     }
 
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} title="Dirección del viento">
       <Card>
         <CardTitle className="text-center text-base xl:text-xl">
           Dirección del viento

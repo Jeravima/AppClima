@@ -31,9 +31,10 @@ export const Data = () => {
                     className="col-span-1 flex-1"
                     wind={weatherData.wind.speed}
                   />
-                  <HumidityCard
+                  <HumidityCard 
                     className="col-span-1 flex-1"
                     humidity={weatherData.main.humidity}
+                    
                   />
                 </div>
                 <WindDirectionCard

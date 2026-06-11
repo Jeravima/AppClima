@@ -36,25 +36,28 @@ export const Resumen = ({ className = "", weatherData }: Props) => {
     <div
       className={`shadow-lg bg-white/10 backdrop-blur-lg border border-border flex flex-col items-center rounded-xl p-4 md:p-6 transition-all duration-300 hover:shadow-xl ${className} `}
     >
-      <button
-        onClick={toggleFavorite}
-        className="cursor-pointer translate-x-30 transition-colors hover:scale-110"
-        title={
-          isFavorite(weatherData?.id ?? 0)
-            ? "Remover de favoritos"
-            : "Guardar como favorito"
-        }
-      >
-        <Heart
-          size={26}
-          color="red"
-          fill={isFavorite(weatherData?.id ?? 0) ? "red" : "none"}
-        />
-      </button>
+      <div className="flex justify-start w-full">
+        <button
+          onClick={toggleFavorite}
+          className="cursor-pointer transition-colors hover:scale-110"
+          title={
+            isFavorite(weatherData?.id ?? 0)
+              ? "Remover de favoritos"
+              : "Guardar como favorito"
+          }
+        >
+          <Heart
+            size={26}
+            color="red"
+            fill={isFavorite(weatherData?.id ?? 0) ? "red" : "none"}
+          />
+        </button>
+      </div>
+
       <img
         src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
         alt="iconWeather"
-        className="h-24 md:h-32 lg:h-40 w-24 md:w-32 lg:w-40 drop-shadow-lg object-contain"
+        className="h-30 md:h-35 lg:h-45 w-30 md:w-35 lg:w-45 drop-shadow-lg object-contain"
       />
       <p className="text-8xl md:text-5xl lg:text-7xl font-bold text-foreground mt-2">
         {Math.round(weatherData?.main.temp ?? 0)}°

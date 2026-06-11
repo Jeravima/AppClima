@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { useTheme } from "@/context/theme-provider";
-import {Sun,Moon} from 'lucide-react'
+import { Sun, Moon } from "lucide-react";
 import { Input } from "./ui/input";
 
 interface Props {
@@ -11,8 +11,8 @@ interface Props {
 export const Navbar = ({ onSearch }: Props) => {
   const [city, setCity] = useState("");
 
-  const {theme,setTheme}= useTheme()
-  const isDark = theme === 'dark'
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
 
   const submit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,20 +21,19 @@ export const Navbar = ({ onSearch }: Props) => {
   };
 
   return (
-    <nav className=" min-w-max px-4 md:px-6 py-4 shadow-xs border border-border mx-8 mt-4  bg-white/10 rounded-2xl  backdrop-blur-lg">
+    <nav className="min-w-max px-4 md:px-6 py-4 shadow-xs border border-border mx-4 xl:mx-8 mt-4  bg-white/10 rounded-2xl  backdrop-blur-lg">
       <div className="flex justify-between items-center">
         <form
           onSubmit={submit}
-          className="flex items-center relative max-w-md md:max-w-xl lg:max-w-2xl"
+          className="flex items-center relative max-w-md md:max-w-xl lg:max-w-xl"
         >
-          {/* <input
-            type="text"
-            placeholder="Buscar ciudad..."
-            value={city}
-            className="w-full rounded-2xl pl-10 pr-4 py-2 md:py-3  focus:border-gray-400 focus:outline focus:outline-sky-500 capitalize text-sm md:text-base"
+          <Input
             onChange={(e) => setCity(e.target.value)}
-          /> */}
-          <Input onChange={(e)=> setCity(e.target.value)} placeholder="Busca tu ciudad" value={city} type="text" className="pl-10 rounded-2xl capitalize placeholder:normal-case"/>
+            placeholder="Busca tu ciudad"
+            value={city}
+            type="text"
+            className="pl-10 rounded-2xl capitalize placeholder:normal-case"
+          />
           <button
             type="submit"
             className="absolute left-3 text-gray-500 hover:text-gray-700 transition-colors"
@@ -43,7 +42,7 @@ export const Navbar = ({ onSearch }: Props) => {
           </button>
         </form>
         <div
-          className="mr-4 cursor-pointer"
+          className="mr-4 cursor-pointer hover:scale-105"
           onClick={() => setTheme(isDark ? "light" : "dark")}
           title="Cambiar tema"
         >

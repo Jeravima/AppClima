@@ -8,7 +8,7 @@ interface Props {
 export const Forecast = ({ dataForecast, className = "" }: Props) => {
   return (
     <div
-      className={`overflow-hidden shadow-lg p-4 md:p-6 rounded-lg bg-white/10 backdrop-blur-lg border border-border ${className}`}
+      className={`overflow-hidden shadow-lg p-4 md:p-6 rounded-lg bg-white/10 backdrop-blur-lg border border-border ${className}`} title="Pronóstico para las siguiente horas"
     >
       <h2 className="text-lg md:text-xl font-bold text-foreground text-center mb-4">
         Pronóstico para las siguientes horas

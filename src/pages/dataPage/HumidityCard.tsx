@@ -8,7 +8,7 @@ interface Props {
 
 export const HumidityCard = ({ humidity, className='' }: Props) => {
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} title="Humedad en el aire">
       <Card>
         <CardTitle className="text-center text-base xl:text-xl">
           Humedad

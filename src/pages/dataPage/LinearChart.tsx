@@ -30,7 +30,7 @@ export const LinearChart = ({ className = "", data }: Props) => {
   }));
 
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} title="Sensación térmica y temperatura">
       <Card className="h-full">
         <CardHeader className="pb-3 md:pb-4">
           <CardTitle className="text-lg md:text-xl text-center">
@@ -80,7 +80,7 @@ export const LinearChart = ({ className = "", data }: Props) => {
                 />
 
                 <Line
-                  type="natural"
+                  type="bump"
                   dataKey="feels_like"
                   stroke="#DE2E23"
                   strokeWidth={3}

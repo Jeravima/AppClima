@@ -8,7 +8,7 @@ interface Props {
 
 export const WinCard = ({ wind,className='' }: Props) => {
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} title="Velocidad del viento">
       <Card>
         <CardTitle className="text-center text-base xl:text-xl">Viento</CardTitle>
         <CardContent>

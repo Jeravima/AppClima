@@ -1,75 +1,120 @@
-# React + TypeScript + Vite
+# 🌤️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React**, **TypeScript** y **Tailwind CSS** que permite consultar información meteorológica en tiempo real utilizando la API de OpenWeather.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Búsqueda de ciudades en tiempo real.
+* Consulta de temperatura actual.
+* Información sobre humedad, velocidad del viento y condiciones climáticas.
+* Interfaz responsive para dispositivos móviles y escritorio.
+* Diseño moderno utilizando Tailwind CSS.
+* Integración con la API de OpenWeather.
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* React
+* TypeScript
+* Tailwind CSS
+* Vite
+* OpenWeather API
+* React Router
+* Shadcn
+* Sonner
 
-Note: This will impact Vite dev & build performances.
+## 📦 Instalación
 
-## Expanding the ESLint configuration
+1. Clona el repositorio:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Ingresa al directorio del proyecto:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd tu-repositorio
 ```
+
+3. Instala las dependencias:
+
+```bash
+npm install
+```
+
+4. Crea un archivo `.env` en la raíz del proyecto:
+
+```env
+VITE_OPENWEATHER_API_KEY=tu_api_key
+```
+
+5. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en:
+
+```text
+http://localhost:5173
+```
+
+## 🔑 Variables de Entorno
+
+| Variable                 | Descripción                           |
+| ------------------------ | ------------------------------------- |
+| VITE_OPENWEATHER_API_KEY | API Key proporcionada por OpenWeather |
+
+## 📸 Capturas
+
+### Página principal
+
+![Página principal](./screenshots/home.png)
+
+### Búsqueda de ciudad
+
+![Búsqueda](./screenshots/search.png)
+
+### Vista móvil
+
+![Vista móvil](./screenshots/mobile.png)
+
+
+
+
+
+## 📁 Estructura del Proyecto
+
+```text
+src/
+├── components/
+├── context/
+├── hook/
+├── lib/
+├── pages/
+├── routes/
+├── types/
+├── index.css/
+├── main.tsx
+└── WeatherApp.tsx
+```
+
+## 🌐 API Utilizada
+
+La aplicación consume datos meteorológicos de OpenWeather:
+
+https://openweathermap.org/api
+
+## 📱 Responsive Design
+
+La interfaz está optimizada para:
+
+* 📱 Dispositivos móviles
+* 💻 Tablets
+* 🖥️ Escritorio
+
+
+## 👨‍💻 Autor
+
+Desarrollado por Raúl.

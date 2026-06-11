@@ -1,9 +1,8 @@
 import { Data } from "@/pages/dataPage/DataPage";
 import { Home } from "@/pages/homePage/HomePage";
 import { Layout } from "@/pages/layout/Layout";
-import { Favorites } from "@/pages/Favorites";
+import { Favorites } from "@/pages/favoritesPage/Favorites";
 import { NotFound } from "@/pages/not-foundPage/NotFound";
-import { Settings } from "@/pages/Settings";
 import { createBrowserRouter } from "react-router";
 
 export const appRouter = createBrowserRouter([
@@ -23,10 +22,7 @@ export const appRouter = createBrowserRouter([
         path: "favorites",
         element: <Favorites />,
       },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
+      
     ],
   },
 

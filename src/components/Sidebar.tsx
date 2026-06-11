@@ -4,7 +4,6 @@ import {
   FaHome,
   FaChartArea,
 } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
 
 import { Link, useLocation } from "react-router";
 
@@ -42,15 +41,11 @@ export const Sidebar = () => {
           to="/favorites"
           className={`${pathname === "/favorites" ? "bg-white/30 backdrop-blur-lg text-white " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-sidebar-foreground text-sm md:text-base`}
         >
-          <Heart  size={20} />
+          <Heart
+            size={24}
+            
+          />
           <span className="font-medium">Favoritos</span>
-        </Link>
-        <Link
-          to="/settings"
-          className={`${pathname === "/settings" ? "bg-white/30 backdrop-blur-lg text-black " : ""}flex items-center gap-3  rounded-lg p-3 transition-colors duration-200 text-sidebar-foreground text-sm md:text-base`}
-        >
-          <IoMdSettings size={24} />
-          <span className="font-medium">Settings</span>
         </Link>
       </div>
     </aside>
